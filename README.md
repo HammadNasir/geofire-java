@@ -21,7 +21,7 @@ Android app in this repo.
 
 ### Integrating GeoFire with your data
 
-GeoFire is designed as a lightweight add-on to Firebase. However, to keep things
+GeoFire is designed as a lightweight add-on to the Firebase Realtime Database. However, to keep things
 simple, GeoFire stores data in its own format and its own location within
 your Firebase database. This allows your existing data format and security rules to
 remain unchanged and for you to add GeoFire as an easy solution for geo queries
@@ -40,6 +40,7 @@ at `/bars/<bar-id>`.
 
 
 ## Upgrading GeoFire
+
 
 ### Upgrading from GeoFire 1.0.x to 1.1.x
 
