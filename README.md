@@ -110,6 +110,7 @@ reference.
 
 ```java
 DatabaseReference ref = FirebaseDatabase.getInstance().getReference("path/to/geofire");
+GeoFire geoFire = new GeoFire(ref);
 ```
 
 Note that you can point your reference to anywhere in your Firebase database, but don't
@@ -163,10 +164,9 @@ geoFire.getLocation("firebase-hq", new LocationCallback() {
         }
     }
 
-    @Override
-    public void onCancelled(FirebaseError firebaseError) {
-        System.err.println("There was an error getting the GeoFire location: " + firebaseError);
-    }
+    public void onCancelled(DatabaseError databaseError) {
+         System.err.println("There was an error getting the GeoFire location: " + databaseError);
+      }
 });
 ```
 
@@ -235,7 +235,7 @@ geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
     }
 
     @Override
-    public void onGeoQueryError(FirebaseError error) {
+    public void onGeoQueryError(DatabaseError error) {
         System.err.println("There was an error with this query: " + error);
     }
 });
