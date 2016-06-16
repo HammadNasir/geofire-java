@@ -41,6 +41,10 @@ at `/bars/<bar-id>`.
 
 ## Upgrading GeoFire
 
+### Upgrading from GeoFire 1.x to 2.x
+ 
+ GeoFire 2.0.0 is based on the new 3.x release of [Firebase](https://firebase.google.com).
+ 
 
 ### Upgrading from GeoFire 1.0.x to 1.1.x
 
@@ -54,31 +58,32 @@ and [read our docs for more information about indexing your data](https://www.fi
 
 ## Including GeoFire in your project Android/Java
 
-In order to use GeoFire in your project, you need to [add the Firebase Java
-SDK](https://www.firebase.com/docs/java-quickstart.html?utm_source=geofire-java).
-There are then multiple possibilities to use GeoFire in your project.
+In order to use GeoFire in your project, you need to [add the Firebase Android
+ +SDK](https://firebase.google.com/docs/android/setup). After that you can include
+ +GeoFire with one of the choices below.
+ 
+ ### Gradle
+ 
+ Add a dependency for GeoFire to your `gradle.build` file:
+ 
+ ```groovy
+ dependencies {
+     compile 'com.firebase:geofire:2.0.0'
+ }
+ ```
 
 ### Maven
 
-Add GeoFire to your Maven enabled projects with a new dependency:
+GeoFire also works with Maven:
 
 ```xml
 <dependency>
   <groupId>com.firebase</groupId>
   <artifactId>geofire</artifactId>
-  <version>[1.1.0,)</version>
+  <version>2.0.0</version>
 </dependency>
 ```
 
-### Gradle
-
-Likewise, you can add a dependency to your `gradle.build` file:
-
-```groovy
-dependencies {
-    compile 'com.firebase:geofire:1.1.0+'
-}
-```
 
 ### Jar-File
 
@@ -89,7 +94,7 @@ page](https://github.com/firebase/geofire-java/releases).
 ## Getting Started with Firebase
 
 GeoFire requires the Firebase database in order to store location data. You can [sign up here for a free
-account](https://www.firebase.com/signup/?utm_source=geofire-java).
+account](https://console.firebase.google.com/).
 
 
 ## Quickstart
@@ -104,7 +109,7 @@ database and to create queries. To create a new `GeoFire` instance you need to a
 reference.
 
 ```java
-GeoFire geoFire = new GeoFire(new Firebase("https://<your-firebase>.firebaseio.com/"));
+DatabaseReference ref = FirebaseDatabase.getInstance().getReference("path/to/geofire");
 ```
 
 Note that you can point your reference to anywhere in your Firebase database, but don't
